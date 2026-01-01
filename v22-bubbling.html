@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            padding: 20px;
+            background-color: #CC527A;
+        }
+        div{
+            padding: 20px;
+            background-color: #E8175D;
+            width: max-content;
+        }
+        span{
+            padding: 20px;
+            background-color: #474747;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span>
+            <button>click me</button>
+        </span>
+    </div>
+
+
+    <script>
+        const body=document.getElementsByTagName('body')[0];
+        const div=document.getElementsByTagName("div")[0];
+        const span=document.getElementsByTagName("span")[0];
+        const button=document.getElementsByTagName("button")[0];
+
+        body.addEventListener("click",()=>{
+            console.log("body was clicked");
+            
+        })
+
+        div.addEventListener("click",()=>{
+            console.log("div was clicked");
+            
+        })
+
+        span.addEventListener("click",()=>{
+            console.log("span was clicked");
+            
+        })
+
+        //fkt buuton vr click kelau tri pn sagla print hotay(bosy,div,span,button was clicked)
+        //button was clicked asa ala pahije hot fkt
+        //mhnun event pass karanr ani stoppropagation lihnar tya mule fkt button was clicked dakhvnar
+        //span la lavala asta tr he ala asta button was clicked & span was clicked
+        button.addEventListener("click",(event)=>
+        {
+            event.stopPropagation()
+            console.log("button was clicked");
+            
+        })
+    </script>
+    
+</body>
+</html>

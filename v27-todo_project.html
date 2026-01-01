@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do </title>
+    <style>
+        .done{
+            text-decoration: line-through;
+            color: #888; /* Added a style for done items to make it slightly clearer */
+        }
+    </style>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f4f4f9; padding: 20px;">
+    <div style="max-width: 400px; margin: 40px auto; background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+        <input type="text" id="write" placeholder="Add a new task..." 
+               style="width: 95%; padding: 10px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 4px; font-size: 16px;">
+        <ul id="todo-list" style="list-style-type: none; padding: 0;"></ul>
+    </div>
+
+    <script>
+        let write= document.getElementById("write");
+        let todolist=document.getElementById("todo-list");
+
+        write.addEventListener("keyup", function(e){
+            if(e.key=="Enter"){
+                addTodo(this.value);
+                this.value=""
+            }
+        })
+
+        function addTodo(val)
+        {
+            let list=document.createElement("li");
+            // Added inline style to the list item (li)
+            list.innerHTML=`<span style="display: inline-block; padding: 8px 12px; margin-bottom: 5px; background-color: #e9ecef; border-radius: 4px; width: 90%; cursor: pointer;">${val}</span>`;
+            todolist.appendChild(list);
+            console.log(val);
+
+            // The click listener is now on the 'li' element, and it toggles the 'done' class on the 'span' inside.
+            list.addEventListener("click",function(){
+                // Toggles the 'done' class on the inner span element for the strikethrough effect
+                this.querySelector('span').classList.toggle("done"); 
+            })
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            padding: 20px;
+            background-color: #CC527A;
+        }
+        div{
+            padding: 20px;
+            background-color: #E8175D;
+            width: max-content;
+        }
+        span{
+            padding: 20px;
+            background-color: #474747;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span>
+            <button>click me</button>
+        </span>
+    </div>
+
+
+    <script>
+        //v222 madhe je motha code lihila hota tyala chhota karnya satrhi
+        //hya file madhe div che fkt 2 child ahet pn dar veli aju kami jast asu shktat tya mule code vadhat rahnar tya sathi khalchi method use karychi
+        const div=document.getElementsByTagName("div")[0];
+
+        div.addEventListener("click",(event)=>{
+            if(event.target.tagName=="BUTTON")
+            {
+            console.log("button was clicked");
+            
+            }
+            else if(event.target.tagName=="SPAN")
+            {
+                console.log("span was clicked");
+                
+            }
+            else{
+                console.log("div was clicked");
+                
+            }
+        })
+    </script>
+    
+</body>
+</html>

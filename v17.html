@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #myDiv
+        {
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine;
+            border: 2px solid black;
+            border-radius: 10px;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="myDiv" onmouseover="onMouseOver()" onmouseout="onMouseOut(this)"></div>
+    <br>
+    <button onclick="changeColor()" >change color</button>
+    <!-- <button onclick="changeColor(this)" >change color</button> -->
+     <!-- as pn lihu shkto mg khali pn chnar karav lagel -->
+
+    <script>
+        function changeColor()
+        {
+            var div= document.getElementById("myDiv");
+            div.style.backgroundColor="red"
+        }
+
+        function onMouseOver()
+        {
+            var div= document.getElementById("myDiv");
+            div.style.backgroundColor="orange" 
+        }
+
+        //   function onMouseOver(div)
+        // {
+        //     div.style.backgroundColor="orange" 
+        // }
+
+         function onMouseOut(div)
+        {
+            div.style.backgroundColor="purple" 
+        }
+    </script>
+</body>
+</html>

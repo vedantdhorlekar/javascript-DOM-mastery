@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="loc"></div>
+
+    
+    <script>
+        let loc = document.getElementById("loc");
+        //eka vveli ekach ch chlatay
+        // loc.innerHTML=window.location.href;//http://127.0.0.1:5500/v20-window_location.html
+        // loc.innerHTML=window.location.hostname;//127.0.0.1
+        // loc.innerHTML=window.location.pathname;///v20-window_location.html
+        loc.innerHTML=window.location.protocol;//http:
+        // loc.innerHTML=window.location.assign("https://gemini.google.com/");//gemini chalu honar
+
+    </script>
+</body>
+</html>
